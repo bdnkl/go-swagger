@@ -1,3 +1,15 @@
+definitions:
+  main.album:
+    properties:
+      artist:
+        type: string
+      id:
+        type: string
+      price:
+        type: number
+      title:
+        type: string
+    type: object
 info:
   contact: {}
 paths:
@@ -5,14 +17,56 @@ paths:
     get:
       consumes:
       - application/json
-      description: get albmums
       produces:
       - application/json
       responses:
         "200":
           description: OK
           schema:
-            type: string
+            items:
+              $ref: '#/definitions/main.album'
+            type: array
+      summary: Get albums
       tags:
-      - example
+      - album
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Album info
+        in: body
+        name: album
+        required: true
+        schema:
+          $ref: '#/definitions/main.album'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/main.album'
+      summary: Post album
+      tags:
+      - album
+  /albums/{id}:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/main.album'
+      summary: Get album with id
+      tags:
+      - album
 swagger: "2.0"

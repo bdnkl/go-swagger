@@ -36,20 +36,27 @@ func main() {
 	router.Run("localhost:8080")
 }
 
-// Get Albums
-// @Summary
+// @Summary Get albums
 // @Schemes
-// @Description get albmums
-// @Tags example
+// @Description
+// @Tags album
 // @Accept json
 // @Produce json
-// @Success 200 {string} albums
+// @Success 200 {object} []album
 // @Router /albums [get]
 func getAlbums(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, albums)
 }
 
-// postAlbums adds an album from JSON received in the request body.
+// @Summary Post album
+// @Schemes
+// @Description
+// @Tags album
+// @Param album body album true "Album info"
+// @Accept json
+// @Produce json
+// @Success 200 {object} album
+// @Router /albums [post]
 func postAlbums(c *gin.Context) {
 	var newAlbum album
 
@@ -64,8 +71,15 @@ func postAlbums(c *gin.Context) {
 	c.IndentedJSON(http.StatusCreated, newAlbum)
 }
 
-// getAlbumByID locates the album whose ID value matches the id
-// parameter sent by the client, then returns that album as a response.
+// @Summary Get album with id
+// @Schemes
+// @Description
+// @Tags album
+// @Accept json
+// @Produce json
+// @Param id path int true "id"
+// @Success 200 {object} album
+// @Router /albums/{id} [get]
 func getAlbumByID(c *gin.Context) {
 	id := c.Param("id")
 
