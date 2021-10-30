@@ -1,0 +1,18 @@
+info:
+  contact: {}
+paths:
+  /albums:
+    get:
+      consumes:
+      - application/json
+      description: get albmums
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      tags:
+      - example
+swagger: "2.0"
