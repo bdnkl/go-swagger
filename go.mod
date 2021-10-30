@@ -3,6 +3,7 @@ module github.com/bdnkl/go-swagger
 go 1.17
 
 require (
+	github.com/bdnkl/go-swagger/api v0.0.0-20211030173107-8dbb9455dcd3
 	github.com/gin-gonic/gin v1.7.4
 	github.com/swaggo/files v0.0.0-20210815190702-a29dd2bc99b2
 	github.com/swaggo/gin-swagger v1.3.2
