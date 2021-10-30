@@ -1,5 +1,5 @@
 definitions:
-  main.album:
+  api.album:
     properties:
       artist:
         type: string
@@ -24,9 +24,8 @@ paths:
           description: OK
           schema:
             items:
-              $ref: '#/definitions/main.album'
+              $ref: '#/definitions/api.album'
             type: array
-      summary: Get albums
       tags:
       - album
     post:
@@ -38,15 +37,14 @@ paths:
         name: album
         required: true
         schema:
-          $ref: '#/definitions/main.album'
+          $ref: '#/definitions/api.album'
       produces:
       - application/json
       responses:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/main.album'
-      summary: Post album
+            $ref: '#/definitions/api.album'
       tags:
       - album
   /albums/{id}:
@@ -65,8 +63,7 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/main.album'
-      summary: Get album with id
+            $ref: '#/definitions/api.album'
       tags:
       - album
 swagger: "2.0"

@@ -15,14 +15,13 @@
                 "tags": [
                     "album"
                 ],
-                "summary": "Get albums",
                 "responses": {
                     "200": {
                         "description": "OK",
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/main.album"
+                                "$ref": "#/definitions/api.album"
                             }
                         }
                     }
@@ -38,7 +37,6 @@
                 "tags": [
                     "album"
                 ],
-                "summary": "Post album",
                 "parameters": [
                     {
                         "description": "Album info",
@@ -46,7 +44,7 @@
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/main.album"
+                            "$ref": "#/definitions/api.album"
                         }
                     }
                 ],
@@ -54,7 +52,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/main.album"
+                            "$ref": "#/definitions/api.album"
                         }
                     }
                 }
@@ -71,7 +69,6 @@
                 "tags": [
                     "album"
                 ],
-                "summary": "Get album with id",
                 "parameters": [
                     {
                         "type": "integer",
@@ -85,7 +82,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/main.album"
+                            "$ref": "#/definitions/api.album"
                         }
                     }
                 }
@@ -93,7 +90,7 @@
         }
     },
     "definitions": {
-        "main.album": {
+        "api.album": {
             "type": "object",
             "properties": {
                 "artist": {
