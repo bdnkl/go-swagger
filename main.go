@@ -3,7 +3,7 @@ package main
 import (
 	"net/http"
 
-	_ "github.com/bdnkl/go-swagger/docs"
+	_ "github.com/bdnkl/go-swagger"
 
 	"github.com/gin-gonic/gin"
 	swaggerfiles "github.com/swaggo/files"
