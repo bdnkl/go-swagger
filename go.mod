@@ -3,11 +3,16 @@ module github.com/bdnkl/go-swagger
 go 1.17
 
 require (
-	github.com/bdnkl/go-swagger/api v0.0.0-20211030173107-8dbb9455dcd3
+	api v0.0.0
+	docs v0.0.0
 	github.com/gin-gonic/gin v1.7.4
 	github.com/swaggo/files v0.0.0-20210815190702-a29dd2bc99b2
 	github.com/swaggo/gin-swagger v1.3.2
-	github.com/swaggo/swag v1.7.4
+)
+
+replace (
+	api => ./api
+	docs => ./docs
 )
 
 require (
@@ -30,6 +35,7 @@ require (
 	github.com/mattn/go-isatty v0.0.12 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.1 // indirect
+	github.com/swaggo/swag v1.7.4 // indirect
 	github.com/ugorji/go/codec v1.1.7 // indirect
 	golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9 // indirect
 	golang.org/x/net v0.0.0-20210805182204-aaa1db679c0d // indirect

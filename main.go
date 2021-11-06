@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/bdnkl/go-swagger/api"
-	_ "github.com/bdnkl/go-swagger/docs"
+	"api"
+	_ "docs"
 
 	"github.com/gin-gonic/gin"
 	swaggerfiles "github.com/swaggo/files"
@@ -17,7 +17,7 @@ func main() {
 
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
 
-	err := router.Run("localhost:8080")
+	err := router.Run("0.0.0.0:8080")
 	if err != nil {
 		return
 	}
