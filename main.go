@@ -3,11 +3,20 @@ package main
 import (
 	"api"
 	_ "docs"
+	"os"
 
 	"github.com/gin-gonic/gin"
 	swaggerfiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
 )
+
+func getPort() string {
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+	return port
+}
 
 func main() {
 	router := gin.Default()
@@ -17,7 +26,7 @@ func main() {
 
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
 
-	err := router.Run("0.0.0.0:8080")
+	err := router.Run(":" + getPort())
 	if err != nil {
 		return
 	}
